@@ -1,0 +1,32 @@
+#Buscar o provedor no site https://registry.terraform.io/
+#Criar arquivo de configuração do provedor provedor.tf
+
+->terraform init
+
+#Criar o resource dentro do script provedor.tf
+
+->terraform validate
+
+->terraform plan
+
+->terraform apply
+
+#A infraestrutura foi criada com sucesso
+
+#Visualizar a infraestrutura criada
+
+->terraform show
+
+#Destruir a infraestrutura criada
+
+->terraform validate
+
+->terraform plan
+
+->terraform destroy
+
+#Pode ser usado terraform apply/detroy -auto-approve quando não for necessario e seguro aprovar automaticamente o apply e destroy
+
+#Comando para formatar o arquivo .tf
+
+->terraform fmt
