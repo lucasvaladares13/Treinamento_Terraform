@@ -1,0 +1,11 @@
+# verificar a versao do CLI
+az version
+
+# fazer login na conta
+az login
+
+# criar resource group pelo VS Code e CLI
+az group create -l brazilsouth -n rgazurecliwin
+
+# deletar resource group pelo VS Code e CLI
+az group delete -n rgazurecliwin

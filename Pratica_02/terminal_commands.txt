@@ -1,0 +1,21 @@
+# Site instalação CLI Azure
+https://docs.microsoft.com/pt-br/cli/azure/install-azure-cli-windows?tabs=azure-cli
+
+#Verificar se CLI está instalado
+az version
+
+#Login Azure
+az login
+
+#Criar grupo de recursos
+az group create -l brazilsouth(localidade) -n rgazurecliwin(nome)
+
+#Deletar grupo de recursos
+az group delete -n rgazurecliwin(nome)
+
+#Site instalar Docker no windows
+https://docs.docker.com/desktop/install/windows-install/
+
+#Instalar azure cli no docker
+
+docker run -it 'mcr.microsoft.com/azure-cli:latest' locally
