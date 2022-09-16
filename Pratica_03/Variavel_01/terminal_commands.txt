@@ -1,0 +1,11 @@
+# Utilizar o arquivo .tfvars para substituir os valores das variaveis nos arquivos
+
+-> terraform plan -var-file="nome do arquivo.tfvars"
+-> terraform apply -auto-approve -var-file="nome do arquivo.tfvars"
+-> terraform destroy -auto-approve -var-file="nome do arquivo.tfvars"
+
+# Passar o valor de uma variavel atraves do comando
+
+-> terraform plan -var "variavel=Valor da variavel"
+-> terraform apply -var "variavel=Valor da variavel"
+-> terraform destroy 
