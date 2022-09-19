@@ -1,0 +1,73 @@
+# link para documentacao do azurerm_app_service
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service
+
+# fazer deploy de acordo com as variaveis da pasta modelo 01
+
+--> terraform plan -var-file="main.tfvars"
+--> terraform apply -var-file="main.tfvars"
+
+# fazer deploy de acordo com as variaveis da pasta modelo 02
+# Quando muda a variavel ambiente, os recursos anteriores sao sobrescritos, pois compartilham o arquivo de tfstate
+
+--> terraform plan -var-file="dev/main.tfvars"
+--> terraform apply -var-file="dev/main.tfvars"
+
+# fazer deploy de acordo com as variaveis da pasta modelo 03
+# escrever um arquivo tfstate para cada ambiente
+
+--> terraform plan -var-file="dev/main.tfvars" -state="dev/tfstate" -out="dev/main.tfplan"
+--> terraform apply -var-file="dev/main.tfvars" -state="dev/tfstate"
+--> terraform destroy -var-file="dev/main.tfvars" -state="dev/tfstate" -out="dev/main.tfplan"
+
+#Comandos Workspace terraform
+#Mostrar o Workspace atual
+ terraform workspace show
+
+#Lista os Workspaces
+terraform workspace list 
+
+#Selecionar um Workspace
+terraform workspace select <nome>
+
+#Criar uma Workspace
+terraform workspace new <nome>
+
+#Deletar um Workspace
+terraform workspace delete <nome>
+
+# Para usar o Yeoman deve se primeiro instalar o nodejs
+# https://nodejs.org/en/
+
+# Verificar versao de instalacao
+npm version
+
+#instalar o Yeoman
+npm install -g yo
+
+# Instalar o gerador de template do azurerm
+npm install -g generator-az-terra-module
+
+# Conferir versao do Yeoman
+yo --version
+
+# Configurar go-path usado pelo Yeoman para criar os templates em pastas
+# Criar pasta go-work na raiz 
+
+#Adicionar envirioments_variables
+# Apertar Win+R e rodar sysdm.cpl
+# Criar nova variavel com nome GOPATH e o valor o diretorio criado C:/go-work
+
+# Criar template
+yo az-terra-module
+
+# Link instalar o Terragrunt
+# https://terragrunt.gruntwork.io/
+
+#Primeiro instalar o chocolatey
+#https://chocolatey.org/install
+
+#Rodar no power-shell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+#Rodar comando para instalar o Terragrunt atraves do chocolatey
+choco install terragrunt
