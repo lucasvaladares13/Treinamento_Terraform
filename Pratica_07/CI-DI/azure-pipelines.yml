@@ -8,7 +8,24 @@ pool:
   vmImage: windows-latest
 
 steps:
-Settings
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: '0.14.6'
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: '1210lvmc(e731083e-a423-4054-8b2e-0de618328df0)'
+    backendAzureRmResourceGroupName: 'terraformstate'
+    backendAzureRmStorageAccountName: 'terraformstateaz07'
+    backendAzureRmContainerName: 'terraformstate'
+    backendAzureRmKey: '$(storagechave)'
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'azurerm'
+    command: 'validate'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+    ArtifactName: 'infraestrutura'
+    publishLocation: 'Container'
