@@ -1,0 +1,2 @@
+#site com os pools
+https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops&tabs=yaml%2Cbrowser
