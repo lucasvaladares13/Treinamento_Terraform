@@ -1,0 +1,9 @@
+#Login no ACR
+az acr login --name <nome do server>
+
+#Fazer o pull de uma imagem
+docker pull <url do servidor>/<nome do repositorio e tag do portal>
+
+#Rodar imagem
+docker run -d -p 8080:80 <url do servidor>/<nome do repositorio e tag do portal>
+
