@@ -1,0 +1,45 @@
+#Principais comandos docker
+
+#Verificar a versão do docker
+docker version
+
+#Listar as imagens do host
+docker images
+docker image Listar
+
+#Procurar por parametro
+docker search <parametro>
+
+#Baixar imagem de repositorio
+docker image pull <imagem>
+
+#Rodar a imagem baixada na maquina
+docker run <imagem>
+
+#Rodar em porta mapeada
+docker run -it -p 8080:80 ngnix
+
+#Verificar como esta o container do host
+docker ps -a
+
+#Verificar o status do container
+docker stats <id ou alias>
+
+#Inspencionar a imagem ou container com mais detalhes
+docker inspect <id ou alias>
+
+#Deletar uma imagem
+docker rmi <imagem>
+
+#Passar um comando para dentro do container
+docker exec <id ou alias>
+
+#Iniciar um comando que foi pausado
+docker start <id>
+
+#Parar um comando
+docker stop <id>
+
+
+
+
